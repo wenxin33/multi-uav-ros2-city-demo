@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+
+# ROS2 build files
+build/
+install/
+log/
+
+# IDE
+.vscode/
+.idea/
+
+# Private or large files
+*.pt
+*.pth
+*.ckpt
+*.pkl
+*.npy
+*.npz
+datasets/
+checkpoints/
+outputs/
+private/
+full_research_code/
+
+# System files
+.DS_Store
+Thumbs.db
+*:Zone.Identifier

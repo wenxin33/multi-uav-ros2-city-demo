@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>vit_corrt_ros2_city_demo</name>
+  <version>0.0.1</version>
+  <description>ROS2/RViz2 visualization demo for structured 3D city multi-UAV path planning results.</description>
+  <maintainer email="zouwenxing719@gmail.com">zzou</maintainer>
+  <license>MIT</license>
+
+  <depend>rclpy</depend>
+  <depend>geometry_msgs</depend>
+  <depend>nav_msgs</depend>
+  <depend>visualization_msgs</depend>
+  <depend>std_msgs</depend>
+
+  <buildtool_depend>ament_python</buildtool_depend>
+  <exec_depend>python3</exec_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>
