@@ -1,0 +1,1527 @@
+<?xml version="1.0" ?>
+<sdf version="1.10">
+  <world name="city_uav_demo">
+    <plugin filename="gz-sim-physics-system" name="gz::sim::systems::Physics"></plugin>
+    <plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster"></plugin>
+    <plugin filename="gz-sim-user-commands-system" name="gz::sim::systems::UserCommands"></plugin>
+    <light name="sun" type="directional">
+      <cast_shadows>true</cast_shadows>
+      <pose>0 0 80 0 0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <direction>-0.5 0.1 -0.9</direction>
+    </light>
+
+    <model name="ground_plane">
+      <static>true</static>
+      <pose>30.0000 30.0000 -0.0500 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box><size>60.0000 60.0000 0.1000</size></box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box><size>60.0000 60.0000 0.1000</size></box>
+          </geometry>
+          <material>
+            <ambient>0.12 0.12 0.12 1.0</ambient>
+            <diffuse>0.12 0.12 0.12 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="road_0">
+      <static>true</static>
+      <pose>15.0000 30.0000 0.0200 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box><size>4.0000 60.0000 0.0400</size></box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box><size>4.0000 60.0000 0.0400</size></box>
+          </geometry>
+          <material>
+            <ambient>0.02 0.02 0.02 1.0</ambient>
+            <diffuse>0.02 0.02 0.02 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="road_1">
+      <static>true</static>
+      <pose>30.0000 30.0000 0.0200 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box><size>4.0000 60.0000 0.0400</size></box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box><size>4.0000 60.0000 0.0400</size></box>
+          </geometry>
+          <material>
+            <ambient>0.02 0.02 0.02 1.0</ambient>
+            <diffuse>0.02 0.02 0.02 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="road_2">
+      <static>true</static>
+      <pose>45.0000 30.0000 0.0200 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box><size>4.0000 60.0000 0.0400</size></box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box><size>4.0000 60.0000 0.0400</size></box>
+          </geometry>
+          <material>
+            <ambient>0.02 0.02 0.02 1.0</ambient>
+            <diffuse>0.02 0.02 0.02 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="road_3">
+      <static>true</static>
+      <pose>30.0000 15.0000 0.0200 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box><size>60.0000 4.0000 0.0400</size></box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box><size>60.0000 4.0000 0.0400</size></box>
+          </geometry>
+          <material>
+            <ambient>0.02 0.02 0.02 1.0</ambient>
+            <diffuse>0.02 0.02 0.02 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="road_4">
+      <static>true</static>
+      <pose>30.0000 30.0000 0.0200 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box><size>60.0000 4.0000 0.0400</size></box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box><size>60.0000 4.0000 0.0400</size></box>
+          </geometry>
+          <material>
+            <ambient>0.02 0.02 0.02 1.0</ambient>
+            <diffuse>0.02 0.02 0.02 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="road_5">
+      <static>true</static>
+      <pose>30.0000 45.0000 0.0200 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box><size>60.0000 4.0000 0.0400</size></box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box><size>60.0000 4.0000 0.0400</size></box>
+          </geometry>
+          <material>
+            <ambient>0.02 0.02 0.02 1.0</ambient>
+            <diffuse>0.02 0.02 0.02 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="building_0">
+      <static>true</static>
+      <pose>6.0000 7.5000 3.5000 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box><size>6.0000 5.0000 7.0000</size></box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box><size>6.0000 5.0000 7.0000</size></box>
+          </geometry>
+          <material>
+            <ambient>0.50 0.50 0.52 1.0</ambient>
+            <diffuse>0.50 0.50 0.52 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="building_1">
+      <static>true</static>
+      <pose>5.0000 24.0000 11.5000 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box><size>4.0000 6.0000 23.0000</size></box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box><size>4.0000 6.0000 23.0000</size></box>
+          </geometry>
+          <material>
+            <ambient>0.20 0.20 0.22 1.0</ambient>
+            <diffuse>0.20 0.20 0.22 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="building_2">
+      <static>true</static>
+      <pose>5.0000 44.5000 5.0000 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box><size>4.0000 7.0000 10.0000</size></box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box><size>4.0000 7.0000 10.0000</size></box>
+          </geometry>
+          <material>
+            <ambient>0.50 0.50 0.52 1.0</ambient>
+            <diffuse>0.50 0.50 0.52 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="building_3">
+      <static>true</static>
+      <pose>6.5000 52.0000 8.0000 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box><size>7.0000 4.0000 16.0000</size></box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box><size>7.0000 4.0000 16.0000</size></box>
+          </geometry>
+          <material>
+            <ambient>0.20 0.20 0.22 1.0</ambient>
+            <diffuse>0.20 0.20 0.22 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="building_4">
+      <static>true</static>
+      <pose>23.0000 8.5000 5.0000 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box><size>4.0000 7.0000 10.0000</size></box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box><size>4.0000 7.0000 10.0000</size></box>
+          </geometry>
+          <material>
+            <ambient>0.50 0.50 0.52 1.0</ambient>
+            <diffuse>0.50 0.50 0.52 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="building_5">
+      <static>true</static>
+      <pose>23.5000 26.0000 7.5000 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box><size>5.0000 6.0000 15.0000</size></box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box><size>5.0000 6.0000 15.0000</size></box>
+          </geometry>
+          <material>
+            <ambient>0.50 0.50 0.52 1.0</ambient>
+            <diffuse>0.50 0.50 0.52 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="building_6">
+      <static>true</static>
+      <pose>25.0000 41.5000 5.0000 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box><size>6.0000 5.0000 10.0000</size></box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box><size>6.0000 5.0000 10.0000</size></box>
+          </geometry>
+          <material>
+            <ambient>0.50 0.50 0.52 1.0</ambient>
+            <diffuse>0.50 0.50 0.52 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="building_7">
+      <static>true</static>
+      <pose>25.0000 52.0000 11.0000 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box><size>4.0000 4.0000 22.0000</size></box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box><size>4.0000 4.0000 22.0000</size></box>
+          </geometry>
+          <material>
+            <ambient>0.20 0.20 0.22 1.0</ambient>
+            <diffuse>0.20 0.20 0.22 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="building_8">
+      <static>true</static>
+      <pose>43.5000 7.0000 7.0000 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box><size>7.0000 6.0000 14.0000</size></box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box><size>7.0000 6.0000 14.0000</size></box>
+          </geometry>
+          <material>
+            <ambient>0.50 0.50 0.52 1.0</ambient>
+            <diffuse>0.50 0.50 0.52 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="building_9">
+      <static>true</static>
+      <pose>41.5000 25.5000 9.0000 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box><size>5.0000 5.0000 18.0000</size></box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box><size>5.0000 5.0000 18.0000</size></box>
+          </geometry>
+          <material>
+            <ambient>0.20 0.20 0.22 1.0</ambient>
+            <diffuse>0.20 0.20 0.22 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="building_10">
+      <static>true</static>
+      <pose>43.0000 44.5000 6.0000 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box><size>6.0000 7.0000 12.0000</size></box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box><size>6.0000 7.0000 12.0000</size></box>
+          </geometry>
+          <material>
+            <ambient>0.20 0.35 0.70 1.0</ambient>
+            <diffuse>0.20 0.35 0.70 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="building_11">
+      <static>true</static>
+      <pose>42.0000 50.0000 4.5000 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box><size>4.0000 4.0000 9.0000</size></box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box><size>4.0000 4.0000 9.0000</size></box>
+          </geometry>
+          <material>
+            <ambient>0.50 0.50 0.52 1.0</ambient>
+            <diffuse>0.50 0.50 0.52 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="building_12">
+      <static>true</static>
+      <pose>53.5000 8.5000 4.0000 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box><size>7.0000 7.0000 8.0000</size></box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box><size>7.0000 7.0000 8.0000</size></box>
+          </geometry>
+          <material>
+            <ambient>0.50 0.50 0.52 1.0</ambient>
+            <diffuse>0.50 0.50 0.52 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="building_13">
+      <static>true</static>
+      <pose>52.0000 26.0000 12.0000 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box><size>6.0000 6.0000 24.0000</size></box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box><size>6.0000 6.0000 24.0000</size></box>
+          </geometry>
+          <material>
+            <ambient>0.20 0.20 0.22 1.0</ambient>
+            <diffuse>0.20 0.20 0.22 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="building_14">
+      <static>true</static>
+      <pose>52.5000 43.0000 9.5000 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box><size>7.0000 4.0000 19.0000</size></box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box><size>7.0000 4.0000 19.0000</size></box>
+          </geometry>
+          <material>
+            <ambient>0.20 0.20 0.22 1.0</ambient>
+            <diffuse>0.20 0.20 0.22 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="building_15">
+      <static>true</static>
+      <pose>52.0000 52.0000 9.5000 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box><size>4.0000 4.0000 19.0000</size></box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box><size>4.0000 4.0000 19.0000</size></box>
+          </geometry>
+          <material>
+            <ambient>0.20 0.20 0.22 1.0</ambient>
+            <diffuse>0.20 0.20 0.22 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="building_16">
+      <static>true</static>
+      <pose>20.0000 21.0000 12.0000 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box><size>5.0000 6.0000 24.0000</size></box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box><size>5.0000 6.0000 24.0000</size></box>
+          </geometry>
+          <material>
+            <ambient>0.20 0.20 0.22 1.0</ambient>
+            <diffuse>0.20 0.20 0.22 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="building_17">
+      <static>true</static>
+      <pose>20.0000 39.0000 12.0000 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box><size>5.0000 6.0000 24.0000</size></box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box><size>5.0000 6.0000 24.0000</size></box>
+          </geometry>
+          <material>
+            <ambient>0.20 0.20 0.22 1.0</ambient>
+            <diffuse>0.20 0.20 0.22 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="building_18">
+      <static>true</static>
+      <pose>27.0000 21.0000 12.0000 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box><size>5.0000 6.0000 24.0000</size></box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box><size>5.0000 6.0000 24.0000</size></box>
+          </geometry>
+          <material>
+            <ambient>0.20 0.20 0.22 1.0</ambient>
+            <diffuse>0.20 0.20 0.22 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="building_19">
+      <static>true</static>
+      <pose>27.0000 39.0000 12.0000 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box><size>5.0000 6.0000 24.0000</size></box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box><size>5.0000 6.0000 24.0000</size></box>
+          </geometry>
+          <material>
+            <ambient>0.20 0.20 0.22 1.0</ambient>
+            <diffuse>0.20 0.20 0.22 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="building_20">
+      <static>true</static>
+      <pose>34.0000 21.0000 12.0000 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box><size>5.0000 6.0000 24.0000</size></box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box><size>5.0000 6.0000 24.0000</size></box>
+          </geometry>
+          <material>
+            <ambient>0.20 0.20 0.22 1.0</ambient>
+            <diffuse>0.20 0.20 0.22 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="building_21">
+      <static>true</static>
+      <pose>34.0000 39.0000 12.0000 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box><size>5.0000 6.0000 24.0000</size></box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box><size>5.0000 6.0000 24.0000</size></box>
+          </geometry>
+          <material>
+            <ambient>0.20 0.20 0.22 1.0</ambient>
+            <diffuse>0.20 0.20 0.22 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="start_1">
+      <static>true</static>
+      <pose>1.0000 3.0000 3.0000 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <sphere><radius>0.5000</radius></sphere>
+          </geometry>
+          <material>
+            <ambient>0.0 1.0 0.0 1.0</ambient>
+            <diffuse>0.0 1.0 0.0 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="start_2">
+      <static>true</static>
+      <pose>3.0000 30.0000 5.0000 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <sphere><radius>0.5000</radius></sphere>
+          </geometry>
+          <material>
+            <ambient>0.0 1.0 0.0 1.0</ambient>
+            <diffuse>0.0 1.0 0.0 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="start_3">
+      <static>true</static>
+      <pose>1.0000 52.0000 3.0000 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <sphere><radius>0.5000</radius></sphere>
+          </geometry>
+          <material>
+            <ambient>0.0 1.0 0.0 1.0</ambient>
+            <diffuse>0.0 1.0 0.0 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="goal">
+      <static>true</static>
+      <pose>54.0000 31.0000 4.0000 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <sphere><radius>0.7000</radius></sphere>
+          </geometry>
+          <material>
+            <ambient>1.0 0.0 0.0 1.0</ambient>
+            <diffuse>1.0 0.0 0.0 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="uav_1_path_0">
+      <static>true</static>
+      <pose>1.0000 3.0000 3.0000 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <sphere><radius>0.2000</radius></sphere>
+          </geometry>
+          <material>
+            <ambient>1.0 0.45 0.0 1.0</ambient>
+            <diffuse>1.0 0.45 0.0 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="uav_1_path_2">
+      <static>true</static>
+      <pose>1.0000 8.0000 6.0000 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <sphere><radius>0.2000</radius></sphere>
+          </geometry>
+          <material>
+            <ambient>1.0 0.45 0.0 1.0</ambient>
+            <diffuse>1.0 0.45 0.0 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="uav_1_path_4">
+      <static>true</static>
+      <pose>1.0000 8.0000 10.0000 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <sphere><radius>0.2000</radius></sphere>
+          </geometry>
+          <material>
+            <ambient>1.0 0.45 0.0 1.0</ambient>
+            <diffuse>1.0 0.45 0.0 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="uav_1_path_6">
+      <static>true</static>
+      <pose>6.0000 9.0000 11.0000 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <sphere><radius>0.2000</radius></sphere>
+          </geometry>
+          <material>
+            <ambient>1.0 0.45 0.0 1.0</ambient>
+            <diffuse>1.0 0.45 0.0 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="uav_1_path_8">
+      <static>true</static>
+      <pose>10.0000 11.0000 10.0000 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <sphere><radius>0.2000</radius></sphere>
+          </geometry>
+          <material>
+            <ambient>1.0 0.45 0.0 1.0</ambient>
+            <diffuse>1.0 0.45 0.0 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="uav_1_path_10">
+      <static>true</static>
+      <pose>15.0000 12.0000 10.0000 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <sphere><radius>0.2000</radius></sphere>
+          </geometry>
+          <material>
+            <ambient>1.0 0.45 0.0 1.0</ambient>
+            <diffuse>1.0 0.45 0.0 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="uav_1_path_12">
+      <static>true</static>
+      <pose>19.0000 15.0000 9.0000 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <sphere><radius>0.2000</radius></sphere>
+          </geometry>
+          <material>
+            <ambient>1.0 0.45 0.0 1.0</ambient>
+            <diffuse>1.0 0.45 0.0 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="uav_1_path_14">
+      <static>true</static>
+      <pose>24.0000 15.0000 9.0000 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <sphere><radius>0.2000</radius></sphere>
+          </geometry>
+          <material>
+            <ambient>1.0 0.45 0.0 1.0</ambient>
+            <diffuse>1.0 0.45 0.0 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="uav_1_path_16">
+      <static>true</static>
+      <pose>29.0000 16.0000 8.0000 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <sphere><radius>0.2000</radius></sphere>
+          </geometry>
+          <material>
+            <ambient>1.0 0.45 0.0 1.0</ambient>
+            <diffuse>1.0 0.45 0.0 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="uav_1_path_18">
+      <static>true</static>
+      <pose>33.0000 16.0000 8.0000 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <sphere><radius>0.2000</radius></sphere>
+          </geometry>
+          <material>
+            <ambient>1.0 0.45 0.0 1.0</ambient>
+            <diffuse>1.0 0.45 0.0 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="uav_1_path_20">
+      <static>true</static>
+      <pose>39.0000 15.0000 7.0000 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <sphere><radius>0.2000</radius></sphere>
+          </geometry>
+          <material>
+            <ambient>1.0 0.45 0.0 1.0</ambient>
+            <diffuse>1.0 0.45 0.0 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="uav_1_path_22">
+      <static>true</static>
+      <pose>40.0000 21.0000 6.0000 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <sphere><radius>0.2000</radius></sphere>
+          </geometry>
+          <material>
+            <ambient>1.0 0.45 0.0 1.0</ambient>
+            <diffuse>1.0 0.45 0.0 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="uav_1_path_24">
+      <static>true</static>
+      <pose>45.0000 21.0000 7.0000 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <sphere><radius>0.2000</radius></sphere>
+          </geometry>
+          <material>
+            <ambient>1.0 0.45 0.0 1.0</ambient>
+            <diffuse>1.0 0.45 0.0 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="uav_1_path_26">
+      <static>true</static>
+      <pose>47.0000 25.0000 8.0000 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <sphere><radius>0.2000</radius></sphere>
+          </geometry>
+          <material>
+            <ambient>1.0 0.45 0.0 1.0</ambient>
+            <diffuse>1.0 0.45 0.0 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="uav_1_path_28">
+      <static>true</static>
+      <pose>46.0000 29.0000 9.0000 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <sphere><radius>0.2000</radius></sphere>
+          </geometry>
+          <material>
+            <ambient>1.0 0.45 0.0 1.0</ambient>
+            <diffuse>1.0 0.45 0.0 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="uav_1_path_30">
+      <static>true</static>
+      <pose>49.0000 31.0000 6.0000 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <sphere><radius>0.2000</radius></sphere>
+          </geometry>
+          <material>
+            <ambient>1.0 0.45 0.0 1.0</ambient>
+            <diffuse>1.0 0.45 0.0 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="uav_1_path_32">
+      <static>true</static>
+      <pose>54.0000 31.0000 4.0000 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <sphere><radius>0.2000</radius></sphere>
+          </geometry>
+          <material>
+            <ambient>1.0 0.45 0.0 1.0</ambient>
+            <diffuse>1.0 0.45 0.0 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="uav_2_path_0">
+      <static>true</static>
+      <pose>3.0000 30.0000 5.0000 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <sphere><radius>0.2000</radius></sphere>
+          </geometry>
+          <material>
+            <ambient>0.0 0.65 1.0 1.0</ambient>
+            <diffuse>0.0 0.65 1.0 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="uav_2_path_2">
+      <static>true</static>
+      <pose>9.0000 29.0000 5.0000 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <sphere><radius>0.2000</radius></sphere>
+          </geometry>
+          <material>
+            <ambient>0.0 0.65 1.0 1.0</ambient>
+            <diffuse>0.0 0.65 1.0 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="uav_2_path_4">
+      <static>true</static>
+      <pose>13.0000 31.0000 5.0000 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <sphere><radius>0.2000</radius></sphere>
+          </geometry>
+          <material>
+            <ambient>0.0 0.65 1.0 1.0</ambient>
+            <diffuse>0.0 0.65 1.0 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="uav_2_path_6">
+      <static>true</static>
+      <pose>15.0000 34.0000 9.0000 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <sphere><radius>0.2000</radius></sphere>
+          </geometry>
+          <material>
+            <ambient>0.0 0.65 1.0 1.0</ambient>
+            <diffuse>0.0 0.65 1.0 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="uav_2_path_8">
+      <static>true</static>
+      <pose>19.0000 34.0000 11.0000 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <sphere><radius>0.2000</radius></sphere>
+          </geometry>
+          <material>
+            <ambient>0.0 0.65 1.0 1.0</ambient>
+            <diffuse>0.0 0.65 1.0 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="uav_2_path_10">
+      <static>true</static>
+      <pose>23.0000 33.0000 9.0000 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <sphere><radius>0.2000</radius></sphere>
+          </geometry>
+          <material>
+            <ambient>0.0 0.65 1.0 1.0</ambient>
+            <diffuse>0.0 0.65 1.0 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="uav_2_path_12">
+      <static>true</static>
+      <pose>28.0000 32.0000 8.0000 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <sphere><radius>0.2000</radius></sphere>
+          </geometry>
+          <material>
+            <ambient>0.0 0.65 1.0 1.0</ambient>
+            <diffuse>0.0 0.65 1.0 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="uav_2_path_14">
+      <static>true</static>
+      <pose>34.0000 32.0000 8.0000 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <sphere><radius>0.2000</radius></sphere>
+          </geometry>
+          <material>
+            <ambient>0.0 0.65 1.0 1.0</ambient>
+            <diffuse>0.0 0.65 1.0 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="uav_2_path_16">
+      <static>true</static>
+      <pose>40.0000 32.0000 7.0000 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <sphere><radius>0.2000</radius></sphere>
+          </geometry>
+          <material>
+            <ambient>0.0 0.65 1.0 1.0</ambient>
+            <diffuse>0.0 0.65 1.0 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="uav_2_path_18">
+      <static>true</static>
+      <pose>45.0000 33.0000 6.0000 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <sphere><radius>0.2000</radius></sphere>
+          </geometry>
+          <material>
+            <ambient>0.0 0.65 1.0 1.0</ambient>
+            <diffuse>0.0 0.65 1.0 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="uav_2_path_20">
+      <static>true</static>
+      <pose>51.0000 32.0000 5.0000 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <sphere><radius>0.2000</radius></sphere>
+          </geometry>
+          <material>
+            <ambient>0.0 0.65 1.0 1.0</ambient>
+            <diffuse>0.0 0.65 1.0 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="uav_2_path_21">
+      <static>true</static>
+      <pose>54.0000 31.0000 4.0000 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <sphere><radius>0.2000</radius></sphere>
+          </geometry>
+          <material>
+            <ambient>0.0 0.65 1.0 1.0</ambient>
+            <diffuse>0.0 0.65 1.0 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="uav_3_path_0">
+      <static>true</static>
+      <pose>1.0000 52.0000 3.0000 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <sphere><radius>0.2000</radius></sphere>
+          </geometry>
+          <material>
+            <ambient>1.0 0.8 0.0 1.0</ambient>
+            <diffuse>1.0 0.8 0.0 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="uav_3_path_2">
+      <static>true</static>
+      <pose>1.0000 47.0000 6.0000 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <sphere><radius>0.2000</radius></sphere>
+          </geometry>
+          <material>
+            <ambient>1.0 0.8 0.0 1.0</ambient>
+            <diffuse>1.0 0.8 0.0 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="uav_3_path_4">
+      <static>true</static>
+      <pose>1.0000 42.0000 8.0000 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <sphere><radius>0.2000</radius></sphere>
+          </geometry>
+          <material>
+            <ambient>1.0 0.8 0.0 1.0</ambient>
+            <diffuse>1.0 0.8 0.0 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="uav_3_path_6">
+      <static>true</static>
+      <pose>3.0000 38.0000 6.0000 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <sphere><radius>0.2000</radius></sphere>
+          </geometry>
+          <material>
+            <ambient>1.0 0.8 0.0 1.0</ambient>
+            <diffuse>1.0 0.8 0.0 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="uav_3_path_8">
+      <static>true</static>
+      <pose>9.0000 37.0000 6.0000 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <sphere><radius>0.2000</radius></sphere>
+          </geometry>
+          <material>
+            <ambient>1.0 0.8 0.0 1.0</ambient>
+            <diffuse>1.0 0.8 0.0 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="uav_3_path_10">
+      <static>true</static>
+      <pose>14.0000 36.0000 7.0000 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <sphere><radius>0.2000</radius></sphere>
+          </geometry>
+          <material>
+            <ambient>1.0 0.8 0.0 1.0</ambient>
+            <diffuse>1.0 0.8 0.0 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="uav_3_path_12">
+      <static>true</static>
+      <pose>18.0000 34.0000 9.0000 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <sphere><radius>0.2000</radius></sphere>
+          </geometry>
+          <material>
+            <ambient>1.0 0.8 0.0 1.0</ambient>
+            <diffuse>1.0 0.8 0.0 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="uav_3_path_14">
+      <static>true</static>
+      <pose>24.0000 33.0000 9.0000 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <sphere><radius>0.2000</radius></sphere>
+          </geometry>
+          <material>
+            <ambient>1.0 0.8 0.0 1.0</ambient>
+            <diffuse>1.0 0.8 0.0 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="uav_3_path_16">
+      <static>true</static>
+      <pose>30.0000 34.0000 8.0000 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <sphere><radius>0.2000</radius></sphere>
+          </geometry>
+          <material>
+            <ambient>1.0 0.8 0.0 1.0</ambient>
+            <diffuse>1.0 0.8 0.0 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="uav_3_path_18">
+      <static>true</static>
+      <pose>36.0000 33.0000 7.0000 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <sphere><radius>0.2000</radius></sphere>
+          </geometry>
+          <material>
+            <ambient>1.0 0.8 0.0 1.0</ambient>
+            <diffuse>1.0 0.8 0.0 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="uav_3_path_20">
+      <static>true</static>
+      <pose>42.0000 33.0000 7.0000 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <sphere><radius>0.2000</radius></sphere>
+          </geometry>
+          <material>
+            <ambient>1.0 0.8 0.0 1.0</ambient>
+            <diffuse>1.0 0.8 0.0 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="uav_3_path_22">
+      <static>true</static>
+      <pose>47.0000 33.0000 8.0000 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <sphere><radius>0.2000</radius></sphere>
+          </geometry>
+          <material>
+            <ambient>1.0 0.8 0.0 1.0</ambient>
+            <diffuse>1.0 0.8 0.0 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="uav_3_path_24">
+      <static>true</static>
+      <pose>51.0000 32.0000 6.0000 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <sphere><radius>0.2000</radius></sphere>
+          </geometry>
+          <material>
+            <ambient>1.0 0.8 0.0 1.0</ambient>
+            <diffuse>1.0 0.8 0.0 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="uav_3_path_25">
+      <static>true</static>
+      <pose>54.0000 31.0000 4.0000 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <sphere><radius>0.2000</radius></sphere>
+          </geometry>
+          <material>
+            <ambient>1.0 0.8 0.0 1.0</ambient>
+            <diffuse>1.0 0.8 0.0 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="uav_1">
+      <static>true</static>
+      <pose>1.0000 3.0000 3.0000 0 0 0</pose>
+      <link name="base_link">
+        <visual name="body_visual">
+          <geometry><box><size>0.8 0.8 0.25</size></box></geometry>
+          <material>
+            <ambient>1.0 0.45 0.0 1.0</ambient>
+            <diffuse>1.0 0.45 0.0 1.0</diffuse>
+          </material>
+        </visual>
+        <visual name="arm_x_visual">
+          <pose>0 0 0.05 0 0 0</pose>
+          <geometry><box><size>2.2 0.12 0.12</size></box></geometry>
+          <material>
+            <ambient>1.0 0.45 0.0 1.0</ambient>
+            <diffuse>1.0 0.45 0.0 1.0</diffuse>
+          </material>
+        </visual>
+        <visual name="arm_y_visual">
+          <pose>0 0 0.06 0 0 1.5708</pose>
+          <geometry><box><size>2.2 0.12 0.12</size></box></geometry>
+          <material>
+            <ambient>1.0 0.45 0.0 1.0</ambient>
+            <diffuse>1.0 0.45 0.0 1.0</diffuse>
+          </material>
+        </visual>
+        <visual name="rotor_1_visual">
+          <pose>1.1 0 0.12 0 0 0</pose>
+          <geometry><cylinder><radius>0.22</radius><length>0.06</length></cylinder></geometry>
+          <material><ambient>0.05 0.05 0.05 1.0</ambient><diffuse>0.05 0.05 0.05 1.0</diffuse></material>
+        </visual>
+        <visual name="rotor_2_visual">
+          <pose>-1.1 0 0.12 0 0 0</pose>
+          <geometry><cylinder><radius>0.22</radius><length>0.06</length></cylinder></geometry>
+          <material><ambient>0.05 0.05 0.05 1.0</ambient><diffuse>0.05 0.05 0.05 1.0</diffuse></material>
+        </visual>
+        <visual name="rotor_3_visual">
+          <pose>0 1.1 0.12 0 0 0</pose>
+          <geometry><cylinder><radius>0.22</radius><length>0.06</length></cylinder></geometry>
+          <material><ambient>0.05 0.05 0.05 1.0</ambient><diffuse>0.05 0.05 0.05 1.0</diffuse></material>
+        </visual>
+        <visual name="rotor_4_visual">
+          <pose>0 -1.1 0.12 0 0 0</pose>
+          <geometry><cylinder><radius>0.22</radius><length>0.06</length></cylinder></geometry>
+          <material><ambient>0.05 0.05 0.05 1.0</ambient><diffuse>0.05 0.05 0.05 1.0</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="uav_2">
+      <static>true</static>
+      <pose>3.0000 30.0000 5.0000 0 0 0</pose>
+      <link name="base_link">
+        <visual name="body_visual">
+          <geometry><box><size>0.8 0.8 0.25</size></box></geometry>
+          <material>
+            <ambient>1.0 0.45 0.0 1.0</ambient>
+            <diffuse>1.0 0.45 0.0 1.0</diffuse>
+          </material>
+        </visual>
+        <visual name="arm_x_visual">
+          <pose>0 0 0.05 0 0 0</pose>
+          <geometry><box><size>2.2 0.12 0.12</size></box></geometry>
+          <material>
+            <ambient>1.0 0.45 0.0 1.0</ambient>
+            <diffuse>1.0 0.45 0.0 1.0</diffuse>
+          </material>
+        </visual>
+        <visual name="arm_y_visual">
+          <pose>0 0 0.06 0 0 1.5708</pose>
+          <geometry><box><size>2.2 0.12 0.12</size></box></geometry>
+          <material>
+            <ambient>1.0 0.45 0.0 1.0</ambient>
+            <diffuse>1.0 0.45 0.0 1.0</diffuse>
+          </material>
+        </visual>
+        <visual name="rotor_1_visual">
+          <pose>1.1 0 0.12 0 0 0</pose>
+          <geometry><cylinder><radius>0.22</radius><length>0.06</length></cylinder></geometry>
+          <material><ambient>0.05 0.05 0.05 1.0</ambient><diffuse>0.05 0.05 0.05 1.0</diffuse></material>
+        </visual>
+        <visual name="rotor_2_visual">
+          <pose>-1.1 0 0.12 0 0 0</pose>
+          <geometry><cylinder><radius>0.22</radius><length>0.06</length></cylinder></geometry>
+          <material><ambient>0.05 0.05 0.05 1.0</ambient><diffuse>0.05 0.05 0.05 1.0</diffuse></material>
+        </visual>
+        <visual name="rotor_3_visual">
+          <pose>0 1.1 0.12 0 0 0</pose>
+          <geometry><cylinder><radius>0.22</radius><length>0.06</length></cylinder></geometry>
+          <material><ambient>0.05 0.05 0.05 1.0</ambient><diffuse>0.05 0.05 0.05 1.0</diffuse></material>
+        </visual>
+        <visual name="rotor_4_visual">
+          <pose>0 -1.1 0.12 0 0 0</pose>
+          <geometry><cylinder><radius>0.22</radius><length>0.06</length></cylinder></geometry>
+          <material><ambient>0.05 0.05 0.05 1.0</ambient><diffuse>0.05 0.05 0.05 1.0</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="uav_3">
+      <static>true</static>
+      <pose>1.0000 52.0000 3.0000 0 0 0</pose>
+      <link name="base_link">
+        <visual name="body_visual">
+          <geometry><box><size>0.8 0.8 0.25</size></box></geometry>
+          <material>
+            <ambient>1.0 0.45 0.0 1.0</ambient>
+            <diffuse>1.0 0.45 0.0 1.0</diffuse>
+          </material>
+        </visual>
+        <visual name="arm_x_visual">
+          <pose>0 0 0.05 0 0 0</pose>
+          <geometry><box><size>2.2 0.12 0.12</size></box></geometry>
+          <material>
+            <ambient>1.0 0.45 0.0 1.0</ambient>
+            <diffuse>1.0 0.45 0.0 1.0</diffuse>
+          </material>
+        </visual>
+        <visual name="arm_y_visual">
+          <pose>0 0 0.06 0 0 1.5708</pose>
+          <geometry><box><size>2.2 0.12 0.12</size></box></geometry>
+          <material>
+            <ambient>1.0 0.45 0.0 1.0</ambient>
+            <diffuse>1.0 0.45 0.0 1.0</diffuse>
+          </material>
+        </visual>
+        <visual name="rotor_1_visual">
+          <pose>1.1 0 0.12 0 0 0</pose>
+          <geometry><cylinder><radius>0.22</radius><length>0.06</length></cylinder></geometry>
+          <material><ambient>0.05 0.05 0.05 1.0</ambient><diffuse>0.05 0.05 0.05 1.0</diffuse></material>
+        </visual>
+        <visual name="rotor_2_visual">
+          <pose>-1.1 0 0.12 0 0 0</pose>
+          <geometry><cylinder><radius>0.22</radius><length>0.06</length></cylinder></geometry>
+          <material><ambient>0.05 0.05 0.05 1.0</ambient><diffuse>0.05 0.05 0.05 1.0</diffuse></material>
+        </visual>
+        <visual name="rotor_3_visual">
+          <pose>0 1.1 0.12 0 0 0</pose>
+          <geometry><cylinder><radius>0.22</radius><length>0.06</length></cylinder></geometry>
+          <material><ambient>0.05 0.05 0.05 1.0</ambient><diffuse>0.05 0.05 0.05 1.0</diffuse></material>
+        </visual>
+        <visual name="rotor_4_visual">
+          <pose>0 -1.1 0.12 0 0 0</pose>
+          <geometry><cylinder><radius>0.22</radius><length>0.06</length></cylinder></geometry>
+          <material><ambient>0.05 0.05 0.05 1.0</ambient><diffuse>0.05 0.05 0.05 1.0</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+  </world>
+</sdf>
